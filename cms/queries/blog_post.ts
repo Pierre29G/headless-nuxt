@@ -1,18 +1,21 @@
 export default gql`
 query BlogPost {
-    allBlogPosts {
-      content
-      blogTitle
-      blogSlug
-      id
-      _createdAt
-      _allContentLocales {
-        value
-      }
-      _seoMetaTags {
-        content
-        attributes
-      }
-      _status
+  allRecipes {
+    id
+    title
+    slugUrl
+    slug {
+      description
+      title
+      twitterCard
     }
+    _status
+    _firstPublishedAt
+    recipeImg{
+      url
+    }
+  }
+  _allRecipesMeta {
+    count
+  }
 }`
