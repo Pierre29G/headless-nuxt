@@ -5,7 +5,7 @@
         <p>Loading data</p>
     </div>
     <div v-else>
-        <h2>Blog results</h2>
+        <h2>Blog results :</h2>
         <ul>
             <li v-for="post in blogPosts.allRecipes" :key="post.id">
                 <img :src="post.recipeImg.url" alt="chat" />
