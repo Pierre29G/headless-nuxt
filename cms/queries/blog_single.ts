@@ -1,21 +1,26 @@
 export default gql`
-query BlogSingle {
-  allRecipes {
+query BlogSingle($slugUrl : String) {
+  recipe(filter: {slugUrl: {eq: $slugUrl}}) {
     id
-    title
-    slugUrl
-    slug {
-      description
-      title
-      twitterCard
-    }
-    _status
-    _firstPublishedAt
-    recipeImg{
+    recipeImg {
       url
+      title
+      tags
     }
-  }
-  _allRecipesMeta {
-    count
+    slugUrl
+    ingredients {
+      id
+      name
+      value
+    }
+    instructions {
+      img {
+        url
+      }
+      instruction {
+        value
+      }
+    }
+    title
   }
 }`
